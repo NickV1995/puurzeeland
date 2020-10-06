@@ -1,5 +1,5 @@
 <?php
-include REVIEW_PLUGIN_MODEL_DIR . '/Review.php';
+include REVIEW_PLUGIN_MODEL_DIR . '/ReviewList.php';
 
 $review_list = new Review;
 
@@ -35,17 +35,17 @@ if (!empty($get_array)){
 <caption>Alle nieuwe Recensies</caption>
 <thead>
 <!-- <th width="10">ID</th> -->
-<th width="100">Naam</th>
-<th width="800">Recensie</th>
-<th width="100">Datum</th>
-<th width="120">Status</th>
-<th width="">Actie</th>
+<td width="20%"><b>Naam</b</td>
+<td width="60%"><b>Recensie</b</td>
+<td width="12%"><b>Datum</b</td>
+<td width="10%"><b>Status</b</td>
+<td width="20%"><b>Actie</b></td>
 </tr>
 </thead>
+</table>
 <?php
 
-
-
+//*
 if ($review_list->getNumberOfReviews() < 1) {
   
   ?>
@@ -66,21 +66,28 @@ if ($review_list->getNumberOfReviews() < 1) {
     $approve_link = add_query_arg( $params, $base_url );
 
   ?>
+  <table>
   <tr>
   <?php $review_list_obj->getId();?>
-  <td width='150'><?php echo $review_list_obj->getNaam();?></td>
-  <td width='800'><?php echo $review_list_obj->getRecensie();?></td>
-  <td width='100'><?php echo date('d-m-Y', strtotime($review_list_obj->getDatum()));?></td>
-  <td width="100"><?php echo $review_list_obj->getGoedgekeurd();?></td>
-  <td width='20'>
+  <td width='20%'><?php echo $review_list_obj->getNaam();?></td>
+  <td width='59%'><?php echo $review_list_obj->getRecensie();?></td>
+  <td width='12%'><?php echo date('d-m-Y', strtotime($review_list_obj->getDatum()));?></td>
+  <td width='16%'><?php echo $review_list_obj->getGoedgekeurd();?></td>
+  <td width='20%'>
   <button title="goedkeuren"><a href='<?php echo $approve_link; ?>'><i style="color:green;" class="fas fa-check-circle"></i></a></button>
   </td>
-  <td td width='20'>
+  <td >
   <button title="verwijderen"><a href='<?php echo $del_link; ?>' onclick="return checkDelete()"><i style="color:red;" class="fas fa-minus-circle"></i></a></button>
   </td>
-  </tr >
-<?php } }?> 
-</table>
+  </tr>  
+  <tr>
+    <hr>
+  </tr>
+<?php }?> 
+</table> 
+<?php }?> 
+
+
 </div>
 <script language="JavaScript" type="text/javascript">
 function checkDelete(){

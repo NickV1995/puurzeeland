@@ -1,6 +1,6 @@
 <?php
 
-include REVIEW_PLUGIN_MODEL_DIR.'/Review.php';
+include REVIEW_PLUGIN_MODEL_DIR.'/ReviewList.php';
 require_once REVIEW_PLUGIN_MODEL_DIR.'/NewReview.php';
 
 $nieuwe_review = new NewReview();
@@ -37,7 +37,6 @@ if (!empty($post_array)){
 }
 
 ?>
-
 <?php if ($review_list->getNumberOfApprovedReviews() < 1) {
   
   ?>
@@ -46,10 +45,9 @@ if (!empty($post_array)){
 
 <?php }  else { 
   $review_lijst = $review_list->getApprovedReviewList();
-  
+
   foreach ($review_lijst as $review_list_obj){
   ?>
-
   <table>
   <tr>
   <td width='300'><?php echo $review_list_obj->getNaam();?></td>
@@ -57,33 +55,36 @@ if (!empty($post_array)){
   <td width='200'><?php echo date('d-m-Y', strtotime($review_list_obj->getDatum()));?></td>
   </tr>
   </table>
-<?php }}?>
+<?php
+
+}?>
+<?php }?>
 
 
 <h2><?php echo __('Laat hier een recensie achter.')?></h2>
+<p />
 <form action="<?php $base_url;?>" method="post">
  <tr>
-  <td><?php echo __('Naam:');?></td>
-  <td><input type="text" required name="naam"/></td>
-  <td><?php echo __('Email:');?></td>
-  <td><input type="email" required name="email"/></td>
+ <td><?php echo __('Naam:');?></td>
+ <td><input type="text" required name="naam"/></td>
+ <td><?php echo __('Email:');?></td>
+ <td><input type="email" required name="email"/></td>
  </tr>
  <tr>
-  <td><?php echo __('Recensie:');?></td>
-  <td><textarea type="text" name="review" rows="5" cols="80"></textarea></td>
+ <td><?php echo __('Recensie:');?></td>
+ <td><textarea type="text" name="review" rows="5" cols="80" 
+ ></textarea></td>
  </tr>
  <tr>
-  <td>&nbsp;</td>
+ <td>&nbsp;</td>
  </tr>
  <tr>
-  <td><input type="checkbox" required name="terms"> Ik geef toestemming om ingevulde gegevens op te slaan en te gebruiken.</td>
+ <td><input type="checkbox" required name="terms"> Ik geef toestemming om ingevulde gegevens op te slaan en te gebruiken.</td>
+ <td>
+ <input type="submit" name="add_review" value="<?php echo __('Versturen');?>" /></td>
+ <td colspan="2">&nbsp;</td>
  </tr>
  <tr>
-  <td><input type="submit" name="add_review" value="<?php echo __('Versturen');?>" /></td>
- </tr>
-  <td colspan="2">&nbsp;</td>
- </tr>
- <tr>
-  <td>Voor de privacyverklaring klikt u <a href='http://testpuur.webnv.nl/wp-content/uploads/2020/10/privacy_statement_puurzeeland_22-11-2019.pdf' target="_blank" >hier</a></td>
+ <td>Voor de privacyverklaring klikt u <a href='http://testpuur.webnv.nl/wp-content/uploads/2020/10/privacy_statement_puurzeeland_22-11-2019.pdf' target="_blank" >hier</a></td>
  </tr>
 </form>

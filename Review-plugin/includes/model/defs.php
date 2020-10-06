@@ -1,0 +1,11 @@
+<?php
+
+define('REVIEW_PLUGIN', '1.0.0');
+define('REVIEW_PLUGIN_REQUIRED_WP_VERSION', '4.0');
+define('REVIEW_PLUGIN_BASENAME', plugin_basename(REVIEW_PLUGIN));
+define('REVIEW_PLUGIN_NAME', trim(dirname(REVIEW_PLUGIN_BASENAME), '/'));
+define('REVIEW_PLUGIN_DIR', untrailingslashit(dirname(REVIEW_PLUGIN)));
+define('REVIEW_PLUGIN_INCLUDES_DIR', REVIEW_PLUGIN_DIR . './includes');
+define('REVIEW_PLUGIN_MODEL_DIR', REVIEW_PLUGIN_INCLUDES_DIR . '/model');
+define('REVIEW_PLUGIN_ADMIN_DIR', REVIEW_PLUGIN_DIR . '/admin');
+define('REVIEW_PLUGIN_ADMIN_VIEWS_DIR', REVIEW_PLUGIN_ADMIN_DIR . '/views');

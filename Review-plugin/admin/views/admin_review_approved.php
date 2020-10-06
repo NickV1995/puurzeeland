@@ -1,6 +1,6 @@
 <?php
 
-include REVIEW_PLUGIN_MODEL_DIR . '/Review.php';
+include REVIEW_PLUGIN_MODEL_DIR . '/ReviewList.php';
 
 $review_list = new Review;
 
@@ -35,12 +35,13 @@ if (!empty($get_array)){
 <caption>Alle goedgekeurde recensies</caption>
 <thead>
 <!-- <th width="10">ID</th> -->
-<th width="100">Naam</th>
-<th width="900">Recensie</th>
-<th width="100">Datum</th>
-<th width="">Actie</th>
+<th width="20%">Naam</th>
+<th width="66%">Recensie</th>
+<th width="25%">Datum</th>
+<th width="20%">Actie</th>
 </tr>
 </thead>
+</table>
 <?php
 if ($review_list->getNumberOfApprovedReviews() < 1) {
   
@@ -58,18 +59,23 @@ if ($review_list->getNumberOfApprovedReviews() < 1) {
     $del_link = add_query_arg( $params, $base_url );
 
   ?>
+  <table>
   <tr>
   <?php $review_list_obj->getId();?>
-  <td width='150'><?php echo $review_list_obj->getNaam();?></td>
-  <td width='900'><?php echo $review_list_obj->getRecensie();?></td>
-  <td width='100'><?php echo date('d-m-Y', strtotime($review_list_obj->getDatum()));?></td>
-  <td td width='20'>
+  <td width='20%'><?php echo $review_list_obj->getNaam();?></td>
+  <td width='70%'><?php echo $review_list_obj->getRecensie();?></td>
+  <td width='20%'><?php echo date('d-m-Y', strtotime($review_list_obj->getDatum()));?></td>
+  <td td width='10%'>
   <button title="verwijderen"><a href='<?php echo $del_link; ?>' onclick="return checkDelete()"><i style="color:red;" class="fas fa-minus-circle"></i></a></button>
   </td>
-<?php } ?>
+  </tr>
+  <tr>
+    <hr>
   </tr>
 <?php } ?>
-</table>
+  </table>
+<?php } ?>
+
 </div>
 <script language="JavaScript" type="text/javascript">
 function checkDelete(){
