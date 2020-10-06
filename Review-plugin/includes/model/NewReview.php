@@ -95,7 +95,7 @@ class NewReview{
         global $wpdb;
        
         // Insert query
-        $wpdb->query($wpdb->prepare("INSERT INTO `wp_review`(`review_id`, `naam`, `recensie`, `review_datum`,`goedgekeurd`) VALUES (NULL,'%s' , '%s', current_timestamp(), 'In afwachting');", $input_array['naam'], $input_array['review']));
+        $wpdb->query($wpdb->prepare("INSERT INTO " . $this->getTableName() . "(`review_id`, `naam`, `recensie`, `review_datum`,`goedgekeurd`) VALUES (NULL,'%s' , '%s', current_timestamp(), 'In afwachting');", $input_array['naam'], $input_array['review']));
 
         // Error ? It's in there:
         if ( !empty($wpdb->last_error) ){
@@ -114,5 +114,13 @@ class NewReview{
         }
       return TRUE;
       
+      }
+
+      private function getTableName(){
+
+        global $wpdb;
+    
+        return $table = $wpdb->prefix . "review";
+        
       }
 }
