@@ -62,7 +62,6 @@ if (!empty($post_array)){
 
 
 <h2><?php echo __('Laat hier een recensie achter.')?></h2>
-<p />
 <form action="<?php $base_url;?>" method="post">
  <tr>
  <td><?php echo __('Naam:');?></td>
@@ -80,10 +79,12 @@ if (!empty($post_array)){
  </tr>
  <tr>
  <td><input type="checkbox" required name="terms"> Ik geef toestemming om ingevulde gegevens op te slaan en te gebruiken.</td>
+ <br><br>
  <td>
  <input type="submit" name="add_review" value="<?php echo __('Versturen');?>" /></td>
  <td colspan="2">&nbsp;</td>
  </tr>
+ <br>
  <tr>
  <td>Voor de privacyverklaring klikt u <a href='http://testpuur.webnv.nl/wp-content/uploads/2020/10/privacy_statement_puurzeeland_22-11-2019.pdf' target="_blank" >hier</a></td>
  </tr>
