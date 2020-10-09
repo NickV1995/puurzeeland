@@ -61,16 +61,32 @@ if (!empty($post_array)){
 <?php }?>
 
 
-<h2><?php echo __('Laat hier een recensie achter.')?></h2>
+<h2><?php echo 'Laat hier een recensie achter'?></h2>
 <form action="<?php $base_url;?>" method="post">
+<div>
+  <input type="radio" id="anoniem" name="anoniem" value="anoniem"
+         unchecked>
+  <label for="anoniem">Deze recensie wil ik anoniem invullen</label>
+</div>
+ <?php
+  if (isset($_POST[anoniem])){?>
+  <tr>
+ <td><?php echo 'Naam:';?></td>
+ <td><input type="text" required name="naam" disabled/><?php echo'Anoniem';?></td>
+ <td><?php echo 'Email:';?></td>
+ <td><input type="email" required name="email" disabled/><?php echo'Ano@niem.anoniem';?></td>
+ </tr>
+  <?php }else{?>
+ 
  <tr>
- <td><?php echo __('Naam:');?></td>
+ <td><?php echo 'Naam:';?></td>
  <td><input type="text" required name="naam"/></td>
- <td><?php echo __('Email:');?></td>
+ <td><?php echo 'Email:';?></td>
  <td><input type="email" required name="email"/></td>
  </tr>
+ <?php } ?>
  <tr>
- <td><?php echo __('Recensie:');?></td>
+ <td><?php echo 'Recensie:';?></td>
  <td><textarea type="text" name="review" rows="5" cols="80" 
  ></textarea></td>
  </tr>
@@ -86,6 +102,6 @@ if (!empty($post_array)){
  </tr>
  <br>
  <tr>
- <td>Voor de privacyverklaring klikt u <a href='http://testpuur.webnv.nl/wp-content/uploads/2020/10/privacy_statement_puurzeeland_22-11-2019.pdf' target="_blank" >hier</a></td>
+ <td class="privacy-statement">Voor de privacyverklaring klikt u <a href='http://testpuur.webnv.nl/wp-content/uploads/2020/10/privacy_statement_puurzeeland_22-11-2019.pdf' target="_blank" >hier</a></td>
  </tr>
 </form>
