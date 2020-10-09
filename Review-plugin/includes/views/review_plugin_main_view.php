@@ -69,7 +69,7 @@ if (!empty($post_array)){
   <label for="anoniem">Deze recensie wil ik anoniem invullen</label>
 </div>
  <?php
-  if (isset($_POST[anoniem])){?>
+  if (isset($_POST['anoniem'])){?>
   <tr>
  <td><?php echo 'Naam:';?></td>
  <td><input type="text" required name="naam" disabled/><?php echo'Anoniem';?></td>
