@@ -229,9 +229,9 @@ public function getGoedGekeurd(){
       throw new Exception(__('Missing mandatory fields'));
 
       global $wpdb;
-      $query = $wpdb->prepare("UPDATE FROM `" . $this->getTableName() . "` WHERE `review_id` = %d", $input_array['id']);
+      // $query = $wpdb->prepare("UPDATE FROM `" . $this->getTableName() . "` WHERE `review_id` = %d", $input_array['id']);
 
-      $wpdb->query($query);
+      // $wpdb->query($query);
 
       $wpdb->query($wpdb->prepare("UPDATE ".$this->getTableName(). " SET `goedgekeurd` = 'Ja' ". "WHERE ". $this->getTableName() ."`review_id` =%d;", $input_array['id']) );
 
