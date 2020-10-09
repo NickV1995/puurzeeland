@@ -64,9 +64,8 @@ if (!empty($post_array)){
 <h2><?php echo 'Laat hier een recensie achter'?></h2>
 <form action="<?php $base_url;?>" method="post">
 <div>
-<button class="btn btn-primary" type="button" data-naam="Anoniem" data-square="ano@niem.anoniem">
-</button>
-  <label >Deze recensie wil ik anoniem invullen</label>
+<button class="btn btn-primary" type="button" data-naam="Anoniem" data-email="ano@niem.anoniem">Anoniem</button>
+  <label >Klik op 'Anoniem' om een anonieme review in te vullen</label>
 </div>
   <tr>
  <td><?php echo 'Naam:';?></td>
