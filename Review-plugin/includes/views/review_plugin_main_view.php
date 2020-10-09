@@ -64,27 +64,15 @@ if (!empty($post_array)){
 <h2><?php echo 'Laat hier een recensie achter'?></h2>
 <form action="<?php $base_url;?>" method="post">
 <div>
-  <input type="radio" id="anoniem" name="anoniem" value="anoniem"
-         unchecked>
-  <label for="anoniem">Deze recensie wil ik anoniem invullen</label>
+  <input type="radio" id="anoniem" name="anoniem" value="anoniem" onclick="anoniem(this)">
+  <label >Deze recensie wil ik anoniem invullen</label>
 </div>
- <?php
-  if (isset($_POST['anoniem'])){?>
   <tr>
  <td><?php echo 'Naam:';?></td>
- <td><input type="text" required name="naam" disabled/><?php echo'Anoniem';?></td>
+ <td><input type="text" id="naam" required name="naam"/></td>
  <td><?php echo 'Email:';?></td>
- <td><input type="email" required name="email" disabled/><?php echo'Ano@niem.anoniem';?></td>
+ <td><input type="email" id="email" required name="email"/></td>
  </tr>
-  <?php }else{?>
- 
- <tr>
- <td><?php echo 'Naam:';?></td>
- <td><input type="text" required name="naam"/></td>
- <td><?php echo 'Email:';?></td>
- <td><input type="email" required name="email"/></td>
- </tr>
- <?php } ?>
  <tr>
  <td><?php echo 'Recensie:';?></td>
  <td><textarea type="text" name="review" rows="5" cols="80" 
@@ -105,3 +93,14 @@ if (!empty($post_array)){
  <td class="privacy-statement">Voor de privacyverklaring klikt u <a href='http://testpuur.webnv.nl/wp-content/uploads/2020/10/privacy_statement_puurzeeland_22-11-2019.pdf' target="_blank" >hier</a></td>
  </tr>
 </form>
+
+<script>
+function anoniem(){
+  var anoniem-naam = document.getElementById("naam");
+anoniem-naam.value = "Anoniem";
+var anoniem-email = document.getElementById("email");
+anoniem-email.value = "ano@niem.anoniem";
+}
+
+
+</script>
