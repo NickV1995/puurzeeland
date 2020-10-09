@@ -233,7 +233,7 @@ public function getGoedGekeurd(){
 
       // $wpdb->query($query);
 
-      $wpdb->query($wpdb->prepare("UPDATE ".$this->getTableName(). " SET `goedgekeurd` = 'Ja' ". "WHERE ". $this->getTableName() ."`review_id` =%d;", $input_array['id']) );
+      $wpdb->query($wpdb->prepare("UPDATE ".$this->getTableName(). " SET `goedgekeurd` = 'Ja' WHERE `review_id` =%d;", $input_array['id']) );
 
       if(!empty($wpdb->last_error)){
         
