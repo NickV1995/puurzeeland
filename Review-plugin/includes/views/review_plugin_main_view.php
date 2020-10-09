@@ -103,9 +103,7 @@ const emailField = document.getElementById("email");
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     naamField.value = button.dataset.naam;
-    $('naam').prop('disabled', true);
     emailField.value = button.dataset.email;
-    $('email').prop('disabled', true);
   });
 })
 </script>
