@@ -64,7 +64,8 @@ if (!empty($post_array)){
 <h2><?php echo 'Laat hier een recensie achter'?></h2>
 <form action="<?php $base_url;?>" method="post">
 <div>
-  <input type="radio" id="anoniem" name="anoniem" value="anoniem" onclick="anoniem(this)">
+<button class="btn btn-primary" type="button" data-naam="Anoniem" data-square="ano@niem.anoniem">
+</button>
   <label >Deze recensie wil ik anoniem invullen</label>
 </div>
   <tr>
@@ -95,12 +96,16 @@ if (!empty($post_array)){
 </form>
 
 <script>
-function anoniem(){
-  var anoniem-naam = document.getElementById("naam");
-anoniem-naam.value = "Anoniem";
-var anoniem-email = document.getElementById("email");
-anoniem-email.value = "ano@niem.anoniem";
-}
 
+const buttons = document.querySelectorAll("button");
+const naamField = document.getElementById("naam");
+const emailField = document.getElementById("email");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    naamField.value = button.dataset.naam;
+    emailField.value = button.dataset.email;
+  });
+})
 
 </script>
