@@ -93,9 +93,9 @@ if (!empty($post_array)){
  <td colspan="2">&nbsp;</td>
  </tr>
  <br>
- <tr>
+ <!--<tr>
  <td class="privacy-statement">Voor de privacyverklaring klikt u <a href='http://testpuur.webnv.nl/wp-content/uploads/2020/10/privacy_statement_puurzeeland_22-11-2019.pdf' target="_blank" >hier</a></td>
- </tr>
+ </tr>-->
 </form>
 
 <script>
