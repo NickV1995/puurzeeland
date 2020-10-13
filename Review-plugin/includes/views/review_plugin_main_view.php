@@ -1,3 +1,4 @@
+<link rel='stylesheet' type='text/css' href='css/style.php' />
 <?php
 
 include REVIEW_PLUGIN_MODEL_DIR.'/ReviewList.php';
@@ -40,8 +41,11 @@ if (!empty($post_array)){
 <?php if ($review_list->getNumberOfApprovedReviews() < 1) {
   
   ?>
-
-    <tr><td colspan="3">Er zijn nog geen goedgekeurde recensies aanwezig</td></tr>
+    <table>
+    <tr>
+      <td colspan="3">Er zijn nog geen goedgekeurde recensies aanwezig</td>
+    </tr>
+    </table>
 
 <?php }  else { 
   $review_lijst = $review_list->getApprovedReviewList();

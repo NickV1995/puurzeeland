@@ -227,12 +227,10 @@ public function getGoedGekeurd(){
       if(!isset($input_array['id']))
 
       throw new Exception(__('Missing mandatory fields'));
-
+      // initieer verbinding met de database
       global $wpdb;
-      // $query = $wpdb->prepare("UPDATE FROM `" . $this->getTableName() . "` WHERE `review_id` = %d", $input_array['id']);
-
-      // $wpdb->query($query);
-
+      
+      // verander de status van de recensie naar 'goedgekeurd'
       $wpdb->query($wpdb->prepare("UPDATE ".$this->getTableName(). " SET `goedgekeurd` = 'Ja' WHERE `review_id` =%d;", $input_array['id']) );
 
       if(!empty($wpdb->last_error)){
