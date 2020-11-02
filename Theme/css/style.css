@@ -1,62 +1,161 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');    
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
-h1, h2, h3, h4{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
 }
 
 p {
-    font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /*---------navbar-----------*/
-.navbar-toggler-icon{
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
-.nav-item{
-    color: black;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
+
+.navbar-brand img {
+  width: 110px;
+  padding: 10px;
 }
-a.nav-item{
-    margin-left: 10px;
+.nav-item {
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 15pt;
 }
-.navbar-nav a:hover{
-    color: white;
-    background-color:  #97BD0D;
-    border-radius: 12px;
+a.nav-item {
+  margin-left: 10px;
 }
-.navbar-nav{
-    float: right;
-    text-align: left;
+.navbar-nav a:hover {
+  color: white;
+  background-color: #97bd0d;
+  border-radius: 12px;
+}
+.navbar-nav {
+  float: right;
+  text-align: left;
 }
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 .navbar-toggler {
-    outline: none;
+  outline: none;
 }
 /*-------end navbar--------*/
 
+/*-------banner--------*/
+section#banner img {
+  width: 100%;
+}
+
+section#banner h1 {
+  text-align: center;
+}
+
+h1.quote {
+  font-weight: bolder;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: darkslategray;
+  opacity: 0.7;
+  font-size: 40pt;
+}
+
+div#button {
+  text-align: center;
+}
+
+.fa {
+  font-size: 21pt;
+}
+
+.btn {
+  background-color: #97bd0d;
+  color: white;
+  font-size: 20pt;
+  border-radius: 17px;
+  padding: 15px;
+  font-family: "Montserrat", sans-serif;
+}
+/*------end banner-------*/
+
 /*------services section-------*/
-#services img{
-    width: 300px;
+
+#services {
+  background-color: #f5faf6;
+  padding: 50px;
+  margin-top: 20px;
+}
+#services h4 {
+  width: 300px;
+  margin: auto;
+}
+#services img {
+  width: 300px;
+  padding-bottom: 10px;
+  margin: auto;
+  display: block;
+}
+#services p {
+  width: 300px;
+  margin: auto;
+  display: block;
+}
+a.link-service {
+  text-decoration: underline;
+  color: #97bd0d;
+  font-size: 15pt;
+  width: 300px;
+  margin: auto;
+  display: block;
 }
 /*------end services section-------*/
 
+/*------services-2 section-------*/
+
+#kenmerken {
+  padding: 50px;
+  margin-top: 20px;
+}
+#kenmerken h4 {
+  width: 300px;
+  margin: auto;
+}
+#kenmerken img {
+  width: 300px;
+  padding-bottom: 10px;
+  margin: auto;
+  display: block;
+}
+#kenmerken p {
+  width: 300px;
+  margin: auto;
+  display: block;
+}
+/*------end services-2 section-------*/
+
 /*------footer section-------*/
-#footer{
-    background-color: #635244;
+#footer {
+  background-color: #57462b;
+  background-image: url("/Theme/images/patroontje.PNG");
+  background-origin: content-box;
+  height: 350px;
+  width: 100%;
+  background-blend-mode: soft-light;
+  background-size: cover;
+}
+#footer a {
+  color: white;
 }
 
-#footer a{
-    color: white;
-} 
-
-#footer .fa{
-    font-size: 20px;
-    padding-right: 10px;
+#footer .fa {
+  font-size: 20px;
+  padding-right: 10px;
 }
 
 /*------end footer section-------*/
