@@ -24,7 +24,7 @@ a.nav-item{
 }
 .navbar-nav a:hover{
     color: white;
-    background-color:  #97BD0D;
+    background-color:   #7C960C;
     border-radius: 12px;
 }
 .navbar-nav{
@@ -38,6 +38,23 @@ a.nav-item{
     outline: none;
 }
 /*-------end navbar--------*/
+
+/*-------quote--------*/
+
+section#banner h1.quote{
+    text-align: center;
+    font-weight: 900;
+    color: #635244;
+    opacity: 1;
+    font-size: 24pt;
+    margin-top: 50px;
+}
+
+section#banner button.button{
+    text-align: center;
+}
+
+/*------end quote-------*/
 
 /*------services section-------*/
 #services img{
