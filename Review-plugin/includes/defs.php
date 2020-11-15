@@ -1,6 +1,6 @@
 <?php
 
-define('REVIEW_PLUGIN', '1.0.0');
+//define('REVIEW_PLUGIN', '1.0.0');
 define('REVIEW_PLUGIN_REQUIRED_WP_VERSION', '4.0');
 define('REVIEW_PLUGIN_BASENAME', plugin_basename(REVIEW_PLUGIN));
 define('REVIEW_PLUGIN_NAME', trim(dirname(REVIEW_PLUGIN_BASENAME), '/'));

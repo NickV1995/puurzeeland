@@ -14,6 +14,8 @@ define('REVIEW_PLUGIN', __FILE__);
 
 require_once plugin_dir_path(__FILE__) . 'includes/defs.php';
 
+register_activation_hook(__FILE__, array('ReviewPlugin', 'on_activation'));
+
 class ReviewPlugin{
 
   public function __construct(){
@@ -37,6 +39,12 @@ public function init() {
   }
   $this->loadViews();
 
+}
+
+public static function on_activation() {
+  require_once REVIEW_PLUGIN_MODEL_DIR.'/DatabaseTablesPlugin.php';
+
+  DatabaseTablesPlugin::CreateTables();
 }
 
 public function requireAdmin() {

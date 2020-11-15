@@ -39,6 +39,15 @@ class ReviewPlugin_AdminController{
         'admin_review_approved',
         array('ReviewPlugin_AdminController', 'review_admin_main_approved_submenu')
       );
+
+      add_submenu_page(
+        'review-menu',
+        'Alle Recensies',
+        'Review Labels',
+        'manage_options',
+        'admin_review_label',
+        array('ReviewPlugin_AdminController', 'review_admin_label_submenu')
+      );
     
     }
     
@@ -57,5 +66,9 @@ class ReviewPlugin_AdminController{
       include REVIEW_PLUGIN_ADMIN_VIEWS_DIR . '/admin_review_approved.php';
     }
     
+    static function review_admin_label_submenu(){
+    
+      include REVIEW_PLUGIN_ADMIN_VIEWS_DIR . '/admin_review_label.php';
+    }
   
   }

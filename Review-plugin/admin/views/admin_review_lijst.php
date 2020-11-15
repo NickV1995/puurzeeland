@@ -34,12 +34,12 @@ if (!empty($get_array)){
 <table>
 <caption>Alle nieuwe Recensies</caption>
 <thead>
-<!-- <th width="10">ID</th> -->
-<td width="20%"><b>Naam</b</td>
-<td width="60%"><b>Recensie</b</td>
-<td width="12%"><b>Datum</b</td>
-<td width="10%"><b>Status</b</td>
-<td width="20%"><b>Actie</b></td>
+<td width=""><b>Naam</b</td>
+<td width=""><b>Recensie</b</td>
+<td width=""><b>Label</b</td>
+<td width=""><b>Datum</b</td>
+<td width=""><b>Status</b</td>
+<td width=""><b>Actie</b></td>
 </tr>
 </thead>
 </table>
@@ -69,15 +69,16 @@ if ($review_list->getNumberOfReviews() < 1) {
   <table>
   <tr>
   <?php $review_list_obj->getId();?>
-  <td width='20%'><?php echo $review_list_obj->getNaam();?></td>
-  <td width='59%'><?php echo $review_list_obj->getRecensie();?></td>
-  <td width='12%'><?php echo date('d-m-Y', strtotime($review_list_obj->getDatum()));?></td>
-  <td width='16%'><?php echo $review_list_obj->getGoedgekeurd();?></td>
-  <td width='20%'>
-  <button title="goedkeuren"><a href='<?php echo $approve_link; ?>'><i style="color:green;" class="fas fa-check-circle"></i></a></button>
+  <td width=''><?php echo $review_list_obj->getNaam();?></td>
+  <td width=''><?php echo $review_list_obj->getRecensie();?></td>
+  <td width=''><?php echo $review_list_obj->getLabel();?></td>
+  <td width=''><?php echo date('d-m-Y', strtotime($review_list_obj->getDatum()));?></td>
+  <td width=''><?php echo $review_list_obj->getGoedgekeurd();?></td>
+  <td width=''>
+  <button title="goedkeuren"><a href='<?php echo $approve_link; ?>'>goedkeuren</a></button>
   </td>
   <td >
-  <button title="verwijderen"><a href='<?php echo $del_link; ?>' onclick="return checkDelete()"><i style="color:red;" class="fas fa-minus-circle"></i></a></button>
+  <button title="verwijderen"><a href='<?php echo $del_link; ?>' onclick="return checkDelete()">verwijderen</a></button>
   </td>
   </tr>  
   <tr>
