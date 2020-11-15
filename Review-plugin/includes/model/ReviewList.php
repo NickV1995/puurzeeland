@@ -40,6 +40,13 @@ public function setGoedGekeurd( $goedgekeurd ){
   
 }
 
+public function setLabel( $label ){
+  if ( is_string($label)){
+    $this->label = trim($label);
+  }
+  
+}
+
 /**
  * 
  * @return int    
@@ -71,6 +78,12 @@ public function getDatum(){
 public function getGoedGekeurd(){
     
   return $this->goedgekeurd;
+    
+}
+
+public function getLabel(){
+    
+  return $this->label;
     
 }
 
@@ -124,6 +137,7 @@ public function getGoedGekeurd(){
       $review->setNaam($array['naam']);
       $review->setId($array['review_id']);
       $review->setRecensie($array['recensie']);
+      $review->setLabel($array['label']);
       $review->setDatum($array['review_datum']);
       $review->setGoedgekeurd($array['goedgekeurd']);
 
@@ -146,6 +160,7 @@ public function getGoedGekeurd(){
       $review->setNaam($array['naam']);
       $review->setId($array['review_id']);
       $review->setRecensie($array['recensie']);
+      $review->setLabel($array['label']);
       $review->setDatum($array['review_datum']);
       $review->setGoedgekeurd($array['goedgekeurd']);
 

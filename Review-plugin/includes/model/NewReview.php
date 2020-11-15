@@ -1,6 +1,18 @@
 <?php
 
+require_once REVIEW_PLUGIN_MODEL_DIR.'/ReviewLabel.php';
+
 class NewReview{
+
+  private $review_label = null;
+
+  public function __construct() {
+    $this->review_label = new ReviewLabel();
+  }
+
+  public function getReviewLabelList() {
+    return $this->review_label->getReviewLabelList();
+  }
 
   public function setId($id){
 
@@ -31,6 +43,13 @@ class NewReview{
         $this->review = trim($review);
     }
   }
+
+  public function setLabel($label){
+  
+    if (is_string($label)){
+        $this->label = trim($label);
+    }
+  }
   
   public function getId(){
   
@@ -51,6 +70,11 @@ class NewReview{
   
     return $this->review;
   }
+  
+  public function getLabel(){
+  
+    return $this->label;
+  }
 
   public function getPostValues(){
 
@@ -63,6 +87,8 @@ class NewReview{
     'naam' => array('filter' => FILTER_SANITIZE_STRING ),
     // Help text
     'email' => array('filter' => FILTER_SANITIZE_STRING ),
+
+    'label' => array('filter' => FILTER_SANITIZE_STRING ),
 
     'review' => array('filter' => FILTER_SANITIZE_STRING )
     );
@@ -95,7 +121,7 @@ class NewReview{
         global $wpdb;
        
         // Insert query
-        $wpdb->query($wpdb->prepare("INSERT INTO " . $this->getTableName() . "(`review_id`, `naam`, `recensie`, `review_datum`,`goedgekeurd`) VALUES (NULL,'%s' , '%s', current_timestamp(), 'In afwachting');", $input_array['naam'], $input_array['review']));
+        $wpdb->query($wpdb->prepare("INSERT INTO " . $this->getTableName() . "(`review_id`, `naam`, `recensie`, `review_datum`,`goedgekeurd`,`label`) VALUES (NULL,'%s' , '%s', current_timestamp(), 'In afwachting', '%s');", $input_array['naam'], $input_array['review'],$input_array['label']));
 
         // Error ? It's in there:
         if ( !empty($wpdb->last_error) ){

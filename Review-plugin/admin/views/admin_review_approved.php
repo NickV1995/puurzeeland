@@ -1,6 +1,7 @@
 <?php
 
 include REVIEW_PLUGIN_MODEL_DIR . '/ReviewList.php';
+require_once REVIEW_PLUGIN_MODEL_DIR.'/ReviewLabel.php';
 
 $review_list = new Review;
 
@@ -37,6 +38,7 @@ if (!empty($get_array)){
 <!-- <th width="10">ID</th> -->
 <th width="20%">Naam</th>
 <th width="66%">Recensie</th>
+<th width="">Label</th>
 <th width="25%">Datum</th>
 <th width="20%">Actie</th>
 </tr>
@@ -64,6 +66,7 @@ if ($review_list->getNumberOfApprovedReviews() < 1) {
   <?php $review_list_obj->getId();?>
   <td width='20%'><?php echo $review_list_obj->getNaam();?></td>
   <td width='70%'><?php echo $review_list_obj->getRecensie();?></td>
+  <td width='70%'><?php echo $review_list_obj->getLabel();?></td>
   <td width='20%'><?php echo date('d-m-Y', strtotime($review_list_obj->getDatum()));?></td>
   <td td width='10%'>
   <button title="verwijderen"><a href='<?php echo $del_link; ?>' onclick="return checkDelete()"><i style="color:red;" class="fas fa-minus-circle"></i></a></button>
